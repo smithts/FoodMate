@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Carrots",
+        "category": "Vegetable",
+        "expiration": "11/13/2020"
+    },
+    {
+        "name": "Pizza",
+        "category": "Leftovers",
+        "expiration": "11/10/2020"
+    },
+    {
+        "name": "Chicken Breast",
+        "category": "Meat",
+        "expiration": "11/14/2020"
+    },
+    {
+        "name": "Cranberry Juice",
+        "category": "Beverage",
+        "expiration": "12/31/2020"
+    },
+    {
+        "name": "Celery",
+        "category": "Vegetable",
+        "expiration": "11/16/2020"
+    },
+    {
+        "name": "Milk",
+        "category": "Beverage",
+        "expiration": "11/12/2020"
+    },
+    {
+        "name": "Beer",
+        "category": "Beverage",
+        "expiration": "3/16/2021"
+    }
+]
