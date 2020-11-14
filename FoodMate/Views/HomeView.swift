@@ -10,12 +10,22 @@ import SwiftUI
 struct Storage: View {
     
     @State var showingProfile = false
+    @State var showingAddItem = false
     
     var profileButton: some View {
         Button(action: { self.showingProfile.toggle() }) {
             Image(systemName: "person.crop.circle")
                 .imageScale(.large)
                 .accessibility(label: Text("User Profile"))
+                .padding()
+        }
+    }
+    
+    var addItemButton: some View {
+        Button(action: { self.showingAddItem.toggle() }) {
+            Image(systemName: "plus")
+                .imageScale(.large)
+                .accessibility(label: Text("Add New Item"))
                 .padding()
         }
     }
@@ -34,9 +44,16 @@ struct Storage: View {
             }
             .navigationBarTitle("Food Storage")
             .navigationBarItems(
-                leading: Text("+").bold().font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/),
+                leading: addItemButton,
                 trailing: profileButton
             )
+            .sheet(isPresented: $showingAddItem) {
+                AddItemSelectionView()
+            }
+            .background(EmptyView().sheet(isPresented: $showingProfile) {
+                ProfileView()
+            } )
+            
             
         }
     }

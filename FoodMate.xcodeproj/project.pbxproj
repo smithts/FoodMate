@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,9 @@
 		5A6CD9E925562A19008BD97A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6CD9E825562A19008BD97A /* Data.swift */; };
 		5A73209E2554EE40003D7B4F /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A73209D2554EE40003D7B4F /* ItemDetail.swift */; };
 		5A7320A32554EF6E003D7B4F /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7320A22554EF6E003D7B4F /* FoodItem.swift */; };
+		5A886309256057F60020AF57 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 5A886308256057F60020AF57 /* CodeScanner */; };
+		5A88630E25605C410020AF57 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88630D25605C410020AF57 /* ProfileView.swift */; };
+		5A88631325605DAE0020AF57 /* AddItemSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88631225605DAE0020AF57 /* AddItemSelectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,8 @@
 		5A6CD9E825562A19008BD97A /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		5A73209D2554EE40003D7B4F /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
 		5A7320A22554EF6E003D7B4F /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
+		5A88630D25605C410020AF57 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		5A88631225605DAE0020AF57 /* AddItemSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemSelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A886309256057F60020AF57 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +159,8 @@
 				5A3C148C2548F31A00BAB72A /* HomeView.swift */,
 				5A3C14912548FBFE00BAB72A /* FoodItemView.swift */,
 				5A73209D2554EE40003D7B4F /* ItemDetail.swift */,
+				5A88630D25605C410020AF57 /* ProfileView.swift */,
+				5A88631225605DAE0020AF57 /* AddItemSelectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +212,9 @@
 			dependencies = (
 			);
 			name = FoodMate;
+			packageProductDependencies = (
+				5A886308256057F60020AF57 /* CodeScanner */,
+			);
 			productName = FoodMate;
 			productReference = 5A3C14532548E51200BAB72A /* FoodMate.app */;
 			productType = "com.apple.product-type.application";
@@ -275,6 +286,9 @@
 				Base,
 			);
 			mainGroup = 5A3C144A2548E51100BAB72A;
+			packageReferences = (
+				5A886307256057F60020AF57 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = 5A3C14542548E51200BAB72A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -318,11 +332,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A88630E25605C410020AF57 /* ProfileView.swift in Sources */,
 				5A7320A32554EF6E003D7B4F /* FoodItem.swift in Sources */,
 				5A3C14592548E51200BAB72A /* ContentView.swift in Sources */,
 				5A73209E2554EE40003D7B4F /* ItemDetail.swift in Sources */,
 				5A3C148D2548F31A00BAB72A /* HomeView.swift in Sources */,
 				5A3C14572548E51200BAB72A /* FoodMateApp.swift in Sources */,
+				5A88631325605DAE0020AF57 /* AddItemSelectionView.swift in Sources */,
 				5A3C14922548FBFE00BAB72A /* FoodItemView.swift in Sources */,
 				5A6CD9E925562A19008BD97A /* Data.swift in Sources */,
 			);
@@ -638,6 +654,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5A886307256057F60020AF57 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5A886308256057F60020AF57 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A886307256057F60020AF57 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5A3C144B2548E51100BAB72A /* Project object */;
 }
