@@ -14,15 +14,18 @@ struct FoodItemView: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            Text(item.name).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            Text(item.name).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).foregroundColor(.white)
             
             HStack {
-                Text(item.expiration).font(.subheadline)
+                Text(item.expiration).font(.subheadline).foregroundColor(.white)
                 Spacer()
                 Text(item.category)
+                    .foregroundColor(.white)
             }
             
         }.padding(.all)
+        .background(Color.blue.opacity(0.7))
+        
     }
 }
 
