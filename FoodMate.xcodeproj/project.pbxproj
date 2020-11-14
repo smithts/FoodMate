@@ -22,6 +22,8 @@
 		5A886309256057F60020AF57 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 5A886308256057F60020AF57 /* CodeScanner */; };
 		5A88630E25605C410020AF57 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88630D25605C410020AF57 /* ProfileView.swift */; };
 		5A88631325605DAE0020AF57 /* AddItemSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88631225605DAE0020AF57 /* AddItemSelectionView.swift */; };
+		5A886330256083140020AF57 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88632F256083140020AF57 /* UserData.swift */; };
+		5A886335256086880020AF57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A886334256086880020AF57 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		5A7320A22554EF6E003D7B4F /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		5A88630D25605C410020AF57 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5A88631225605DAE0020AF57 /* AddItemSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemSelectionView.swift; sourceTree = "<group>"; };
+		5A88632F256083140020AF57 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		5A886334256086880020AF57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,7 @@
 				5A3C145A2548E51300BAB72A /* Assets.xcassets */,
 				5A3C145F2548E51300BAB72A /* Info.plist */,
 				5A3C145C2548E51300BAB72A /* Preview Content */,
+				5A886334256086880020AF57 /* SceneDelegate.swift */,
 			);
 			path = FoodMate;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			children = (
 				5A7320A22554EF6E003D7B4F /* FoodItem.swift */,
 				5A6CD9E825562A19008BD97A /* Data.swift */,
+				5A88632F256083140020AF57 /* UserData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -339,7 +345,9 @@
 				5A3C148D2548F31A00BAB72A /* HomeView.swift in Sources */,
 				5A3C14572548E51200BAB72A /* FoodMateApp.swift in Sources */,
 				5A88631325605DAE0020AF57 /* AddItemSelectionView.swift in Sources */,
+				5A886335256086880020AF57 /* SceneDelegate.swift in Sources */,
 				5A3C14922548FBFE00BAB72A /* FoodItemView.swift in Sources */,
+				5A886330256083140020AF57 /* UserData.swift in Sources */,
 				5A6CD9E925562A19008BD97A /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

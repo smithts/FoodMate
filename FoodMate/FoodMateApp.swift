@@ -11,7 +11,7 @@ import SwiftUI
 struct FoodMateApp: App {
     var body: some Scene {
         WindowGroup {
-            Storage()
+            Storage().environmentObject(UserData())
         }
     }
 }
