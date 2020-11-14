@@ -12,6 +12,8 @@ struct Storage: View {
     @State var showingProfile = false
     @State var showingAddItem = false
     
+    @EnvironmentObject var userData: UserData
+    
     var profileButton: some View {
         Button(action: { self.showingProfile.toggle() }) {
             Image(systemName: "person.crop.circle")
@@ -34,7 +36,7 @@ struct Storage: View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 
-                ForEach(foodData, id: \.name) { item in
+                ForEach(userData.addedFood, id: \.name) { item in
                     NavigationLink(
                         destination: ItemDetail(item: item)
                     ) {
@@ -48,7 +50,7 @@ struct Storage: View {
                 trailing: profileButton
             )
             .sheet(isPresented: $showingAddItem) {
-                AddItemSelectionView()
+                AddItemSelectionView().environmentObject(self.userData)
             }
             .background(EmptyView().sheet(isPresented: $showingProfile) {
                 ProfileView()
@@ -61,6 +63,6 @@ struct Storage: View {
 
 struct Storage_Previews: PreviewProvider {
     static var previews: some View {
-        Storage()
+        Storage().environmentObject(UserData())
     }
 }
