@@ -6,13 +6,22 @@
 //
 
 import SwiftUI
+import CodeScanner
 
 struct AddItemSelectionView: View {
     @EnvironmentObject var userData: UserData
     
+    @State private var showingScanner = false
+    
     @State var foodName = ""
     @State var category = ""
     @State var expiration = ""
+    
+    var scanButton: some View {
+        Button(action: { self.showingScanner = true }) {
+            Text("Scan Barcode").font(.headline)
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -30,12 +39,10 @@ struct AddItemSelectionView: View {
                 
             }
             .navigationBarTitle("Add Food Item")
-            .navigationBarItems(trailing: Text("Scan Barcode"))
+            .navigationBarItems(trailing: scanButton)
+        }.sheet(isPresented: $showingScanner) {
+            CodeScannerView(codeTypes: [.ean13,.ean8,.upce], simulatedData: "Chicken-Meat-1/1/2021", completion: self.handleScan)
         }
-        
-        Text(foodName)
-        Text(category)
-        Text(expiration)
     }
     
     func addItemToList() {
@@ -43,6 +50,22 @@ struct AddItemSelectionView: View {
         
         userData.addedFood.append(item)
         
+        //need something here to return to the storage view
+        
+    }
+    
+    func handleScan(result: Result<String, CodeScannerView.ScanError>) {
+        self.showingScanner = false
+        
+        switch result {
+            case .success(let code):
+                
+                userData.addedFood.append(FoodItem(name: code, category: "TestScan", expiration: "TestScan"))
+         
+            case .failure(let error):
+                userData.addedFood.append(FoodItem(name: "Scan", category: "Scan", expiration: "Scan"))
+        }
+ 
     }
 }
 
