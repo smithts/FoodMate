@@ -10,5 +10,6 @@ import SwiftUI
 
 final class UserData: ObservableObject {
     @Published var addedFood = Array<FoodItem>()
+    @Published var allergies = Array<String>()
 }
 
