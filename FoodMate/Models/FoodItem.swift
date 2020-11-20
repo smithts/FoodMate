@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FoodItem: Hashable, Codable {
+struct FoodItem: Hashable, Codable {    
     var name: String
     var category: String
     var expiration: String
