@@ -11,6 +11,8 @@ import CodeScanner
 struct AddItemSelectionView: View {
     @EnvironmentObject var userData: UserData
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var showingScanner = false
     
     @State var foodName = ""
@@ -31,7 +33,8 @@ struct AddItemSelectionView: View {
                     TextField("Category", text: $category)
                     TextField("Expiration", text: $expiration)
                     Button(action: {
-                        addItemToList()
+                        addItemToStorage()
+                        
                     }) {
                         Text("Submit")
                     }
@@ -41,20 +44,22 @@ struct AddItemSelectionView: View {
             .navigationBarTitle("Add Food Item")
             .navigationBarItems(trailing: scanButton)
         }.sheet(isPresented: $showingScanner) {
-            CodeScannerView(codeTypes: [.ean13,.ean8,.upce], simulatedData: "Chicken-Meat-1/1/2021", completion: self.handleScan)
+            CodeScannerView(codeTypes: [.ean13,.ean8,.upce], simulatedData: "FakeScan", completion: self.handleScan)
         }
     }
     
-    func addItemToList() {
+    func addItemToStorage() {
         let item = FoodItem(name: foodName, category: category, expiration: expiration)
         
+        //Add new food item to the list
         userData.addedFood.append(item)
         
-        //need something here to return to the storage view
-        
+        //returns to Storage View
+        self.presentationMode.wrappedValue.dismiss()
     }
     
     func handleScan(result: Result<String, CodeScannerView.ScanError>) {
+        //Exits scan view
         self.showingScanner = false
         
         switch result {
@@ -63,9 +68,11 @@ struct AddItemSelectionView: View {
                 userData.addedFood.append(FoodItem(name: code, category: "TestScan", expiration: "TestScan"))
          
             case .failure(let error):
-                userData.addedFood.append(FoodItem(name: "Scan", category: "Scan", expiration: "Scan"))
+                print(error)
         }
- 
+        
+        //returns to Storage View
+        self.presentationMode.wrappedValue.dismiss()
     }
 }
 

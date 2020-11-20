@@ -34,7 +34,7 @@ struct Storage: View {
     
     var body: some View {
         NavigationView {
-            ScrollView(.vertical, showsIndicators: false) {
+            List {
                 
                 ForEach(userData.addedFood, id: \.name) { item in
                     NavigationLink(
@@ -42,8 +42,10 @@ struct Storage: View {
                     ) {
                         FoodItemView(item: item)
                     }
-                }
+                    
+                }.onDelete(perform: onDelete)
             }
+            .listStyle(PlainListStyle())
             .navigationBarTitle("Food Storage")
             .navigationBarItems(
                 leading: addItemButton,
@@ -58,6 +60,10 @@ struct Storage: View {
             
             
         }
+    }
+    
+    private func onDelete(offsets: IndexSet) {
+        userData.addedFood.remove(atOffsets: offsets)
     }
 }
 
