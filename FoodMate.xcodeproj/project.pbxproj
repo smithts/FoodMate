@@ -19,6 +19,8 @@
 		5A3C14922548FBFE00BAB72A /* FoodItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C14912548FBFE00BAB72A /* FoodItemView.swift */; };
 		5A5692542569D8030083BAB1 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5692532569D8030083BAB1 /* Profile.swift */; };
 		5A5692592569F4680083BAB1 /* AllergyEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5692582569F4670083BAB1 /* AllergyEditView.swift */; };
+		5A56925E256AE2930083BAB1 /* pretzels.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A56925D256AE2930083BAB1 /* pretzels.json */; };
+		5A56926E256AF77B0083BAB1 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56926D256AF77B0083BAB1 /* SwiftyJSON */; };
 		5A6CD9E425562617008BD97A /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A6CD9E325562617008BD97A /* food.json */; };
 		5A6CD9E925562A19008BD97A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6CD9E825562A19008BD97A /* Data.swift */; };
 		5A73209E2554EE40003D7B4F /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A73209D2554EE40003D7B4F /* ItemDetail.swift */; };
@@ -66,6 +68,7 @@
 		5A3C14912548FBFE00BAB72A /* FoodItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemView.swift; sourceTree = "<group>"; };
 		5A5692532569D8030083BAB1 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		5A5692582569F4670083BAB1 /* AllergyEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyEditView.swift; sourceTree = "<group>"; };
+		5A56925D256AE2930083BAB1 /* pretzels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = pretzels.json; path = ../../../../../../../Desktop/pretzels.json; sourceTree = "<group>"; };
 		5A6CD9E325562617008BD97A /* food.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = food.json; sourceTree = "<group>"; };
 		5A6CD9E825562A19008BD97A /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		5A73209D2554EE40003D7B4F /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A56926E256AF77B0083BAB1 /* SwiftyJSON in Frameworks */,
 				5A886309256057F60020AF57 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,10 +176,10 @@
 				5A3C148C2548F31A00BAB72A /* HomeView.swift */,
 				5A3C14912548FBFE00BAB72A /* FoodItemView.swift */,
 				5A73209D2554EE40003D7B4F /* ItemDetail.swift */,
-				5A88630D25605C410020AF57 /* ProfileSummary.swift */,
 				5A88631225605DAE0020AF57 /* AddItemSelectionView.swift */,
-				5A280D7925688C5800F522AF /* ProfileEditor.swift */,
 				5A280D7E2569D24300F522AF /* ProfileHost.swift */,
+				5A88630D25605C410020AF57 /* ProfileSummary.swift */,
+				5A280D7925688C5800F522AF /* ProfileEditor.swift */,
 				5A5692582569F4670083BAB1 /* AllergyEditView.swift */,
 			);
 			path = Views;
@@ -202,6 +206,7 @@
 		5A7320982554D362003D7B4F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5A56925D256AE2930083BAB1 /* pretzels.json */,
 				5A6CD9E325562617008BD97A /* food.json */,
 			);
 			path = Resources;
@@ -232,6 +237,7 @@
 			name = FoodMate;
 			packageProductDependencies = (
 				5A886308256057F60020AF57 /* CodeScanner */,
+				5A56926D256AF77B0083BAB1 /* SwiftyJSON */,
 			);
 			productName = FoodMate;
 			productReference = 5A3C14532548E51200BAB72A /* FoodMate.app */;
@@ -306,6 +312,7 @@
 			mainGroup = 5A3C144A2548E51100BAB72A;
 			packageReferences = (
 				5A886307256057F60020AF57 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				5A56926C256AF77B0083BAB1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 5A3C14542548E51200BAB72A /* Products */;
 			projectDirPath = "";
@@ -325,6 +332,7 @@
 			files = (
 				5A6CD9E425562617008BD97A /* food.json in Resources */,
 				5A3C145E2548E51300BAB72A /* Preview Assets.xcassets in Resources */,
+				5A56925E256AE2930083BAB1 /* pretzels.json in Resources */,
 				5A3C145B2548E51300BAB72A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -682,6 +690,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5A56926C256AF77B0083BAB1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		5A886307256057F60020AF57 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/CodeScanner";
@@ -693,6 +709,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5A56926D256AF77B0083BAB1 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A56926C256AF77B0083BAB1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
 		5A886308256057F60020AF57 /* CodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5A886307256057F60020AF57 /* XCRemoteSwiftPackageReference "CodeScanner" */;

@@ -13,18 +13,21 @@ struct FoodItemView: View {
     @State var expiration = Date()
     
     var body: some View {
-        VStack(alignment: .leading){
-            Text(item.name).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).foregroundColor(.white)
+        //VStack(alignment: .leading){
             
             HStack {
-                Text(item.expiration).font(.subheadline).foregroundColor(.white)
+                //Text(item.expiration).font(.subheadline).foregroundColor(.white)
                 Spacer()
-                Text(item.category)
-                    .foregroundColor(.white)
-            }
+                Text(item.name).font(.title).foregroundColor(.white)
+                Spacer()
+                //Text(item.category)
+                    //.foregroundColor(.white)
+            }.background(Color.blue.opacity(0.7))
+            .frame(maxHeight: 400)
             
-        }.padding(.all)
-        .background(Color.blue.opacity(0.7))
+            
+        //}.padding(.all)
+        //.background(Color.blue.opacity(0.7))
         
     }
 }

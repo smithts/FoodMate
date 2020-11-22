@@ -11,6 +11,8 @@ struct FoodItem: Hashable, Codable {
     var name: String
     var category: String
     var expiration: String
+    var ingredients: String
+    var imageURL: String
     
 }
 
