@@ -32,18 +32,21 @@ struct AddItemSelectionView: View {
                     TextField("Name", text: $foodName)
                     TextField("Category", text: $category)
                     TextField("Expiration", text: $expiration)
-                    Button(action: {
-                        addItemToStorage()
-                        
-                    }) {
-                        Text("Submit")
-                    }
+                    
                 }
                 
+                Button(action: {
+                    addItemToStorage()
+                }) {
+                    Text("Submit").font(.headline)
+                }
             }
             .navigationBarTitle("Add Food Item")
             .navigationBarItems(trailing: scanButton)
-        }.sheet(isPresented: $showingScanner) {
+            
+            
+        }
+        .sheet(isPresented: $showingScanner) {
             CodeScannerView(codeTypes: [.ean13,.ean8,.upce], simulatedData: "FakeScan", completion: self.handleScan)
         }
     }
