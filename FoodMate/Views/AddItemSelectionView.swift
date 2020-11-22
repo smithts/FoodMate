@@ -133,12 +133,17 @@ struct AddItemSelectionView: View {
                 if let data = sample.data(using: .utf8) {
                     if let json = try? JSON(data: data) {
                         for item in json["products"].arrayValue {
-                            userData.addedFood.append(FoodItem(
-                                                        name: item["product_name"].stringValue,
-                                                        category: item["category"].stringValue,
-                                                        expiration: "",
-                                                        ingredients: item["ingredients"].stringValue,
-                                                        imageURL: item["images"][0].stringValue))
+                            var food = FoodItem(
+                                                name: item["product_name"].stringValue,
+                                                category: item["category"].stringValue,
+                                                expiration: "",
+                                                ingredients: item["ingredients"].stringValue,
+                                                imageURL: item["images"][0].stringValue)
+                            if (containsAllergens(foodItem: food)) {
+                                //This food item has something that the user is allergic to
+                            } else {
+                                userData.addedFood.append(food)
+                            }
                         }
                     }
                 }
@@ -153,6 +158,20 @@ struct AddItemSelectionView: View {
         
         //returns to Storage View
         self.presentationMode.wrappedValue.dismiss()
+    }
+    
+    //returns true if allergen is found
+    func containsAllergens(foodItem: FoodItem) -> Bool {
+        var ingredients = foodItem.ingredients
+        var contains = false
+        
+        userData.allergies.forEach { allergen in
+            
+            if let range = ingredients.range(of: allergen, options: .caseInsensitive) {
+                contains = true
+            }
+        }
+        return contains
     }
 }
 
