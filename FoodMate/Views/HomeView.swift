@@ -35,7 +35,6 @@ struct Storage: View {
     var body: some View {
         NavigationView {
             List {
-                
                 ForEach(userData.addedFood, id: \.name) { item in
                     NavigationLink(
                         destination: ItemDetail(item: item)
@@ -55,7 +54,7 @@ struct Storage: View {
                 AddItemSelectionView().environmentObject(self.userData)
             }
             .background(EmptyView().sheet(isPresented: $showingProfile) {
-                ProfileView()
+                ProfileHost()
             } )
             
             

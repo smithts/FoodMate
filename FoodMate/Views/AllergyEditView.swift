@@ -1,20 +1,20 @@
 //
-//  ProfileView.swift
+//  AllergyEditView.swift
 //  FoodMate
 //
-//  Created by Tanner Smith on 11/14/20.
+//  Created by Tanner Smith on 11/21/20.
 //
 
 import SwiftUI
 
-struct ProfileView: View {
+struct AllergyEditView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct ProfileView_Previews: PreviewProvider {
+struct AllergyEditView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        AllergyEditView()
     }
 }
