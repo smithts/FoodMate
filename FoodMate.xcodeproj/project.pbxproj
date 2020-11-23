@@ -19,9 +19,9 @@
 		5A3C14922548FBFE00BAB72A /* FoodItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C14912548FBFE00BAB72A /* FoodItemView.swift */; };
 		5A5692542569D8030083BAB1 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5692532569D8030083BAB1 /* Profile.swift */; };
 		5A5692592569F4680083BAB1 /* AllergyEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5692582569F4670083BAB1 /* AllergyEditView.swift */; };
-		5A56925E256AE2930083BAB1 /* pretzels.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A56925D256AE2930083BAB1 /* pretzels.json */; };
 		5A56926E256AF77B0083BAB1 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56926D256AF77B0083BAB1 /* SwiftyJSON */; };
 		5A569295256B19A20083BAB1 /* getRemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A569294256B19A20083BAB1 /* getRemoteImage.swift */; };
+		5A5692A9256B2FBB0083BAB1 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5692A8256B2FBA0083BAB1 /* AlertView.swift */; };
 		5A6CD9E425562617008BD97A /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A6CD9E325562617008BD97A /* food.json */; };
 		5A6CD9E925562A19008BD97A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6CD9E825562A19008BD97A /* Data.swift */; };
 		5A73209E2554EE40003D7B4F /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A73209D2554EE40003D7B4F /* ItemDetail.swift */; };
@@ -69,8 +69,8 @@
 		5A3C14912548FBFE00BAB72A /* FoodItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemView.swift; sourceTree = "<group>"; };
 		5A5692532569D8030083BAB1 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		5A5692582569F4670083BAB1 /* AllergyEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyEditView.swift; sourceTree = "<group>"; };
-		5A56925D256AE2930083BAB1 /* pretzels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = pretzels.json; path = ../../../../../../../Desktop/pretzels.json; sourceTree = "<group>"; };
 		5A569294256B19A20083BAB1 /* getRemoteImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getRemoteImage.swift; sourceTree = "<group>"; };
+		5A5692A8256B2FBA0083BAB1 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		5A6CD9E325562617008BD97A /* food.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = food.json; sourceTree = "<group>"; };
 		5A6CD9E825562A19008BD97A /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		5A73209D2554EE40003D7B4F /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
@@ -183,6 +183,7 @@
 				5A88630D25605C410020AF57 /* ProfileSummary.swift */,
 				5A280D7925688C5800F522AF /* ProfileEditor.swift */,
 				5A5692582569F4670083BAB1 /* AllergyEditView.swift */,
+				5A5692A8256B2FBA0083BAB1 /* AlertView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,7 +210,6 @@
 		5A7320982554D362003D7B4F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5A56925D256AE2930083BAB1 /* pretzels.json */,
 				5A6CD9E325562617008BD97A /* food.json */,
 			);
 			path = Resources;
@@ -335,7 +335,6 @@
 			files = (
 				5A6CD9E425562617008BD97A /* food.json in Resources */,
 				5A3C145E2548E51300BAB72A /* Preview Assets.xcassets in Resources */,
-				5A56925E256AE2930083BAB1 /* pretzels.json in Resources */,
 				5A3C145B2548E51300BAB72A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +376,7 @@
 				5A886330256083140020AF57 /* UserData.swift in Sources */,
 				5A569295256B19A20083BAB1 /* getRemoteImage.swift in Sources */,
 				5A6CD9E925562A19008BD97A /* Data.swift in Sources */,
+				5A5692A9256B2FBB0083BAB1 /* AlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,7 @@ struct FoodItemView: View {
     @State var expiration = Date()
     
     var body: some View {
-        //VStack(alignment: .leading){
+        VStack(alignment: .leading){
             
             HStack {
                 //Text(item.expiration).font(.subheadline).foregroundColor(.white)
@@ -22,18 +22,26 @@ struct FoodItemView: View {
                 Spacer()
                 //Text(item.category)
                     //.foregroundColor(.white)
-            }.background(Color.blue.opacity(0.7))
-            .frame(maxHeight: 400)
+            }
+            if (item.color == Color.red) {
+                
+                HStack {
+                    Spacer()
+                    Text("ALLERGEN WARNING").font(.subheadline)
+                    Spacer()
+                }
+                
+            }
             
-            
-        //}.padding(.all)
-        //.background(Color.blue.opacity(0.7))
+        }.background(item.color.opacity(0.7))
+        .frame(maxHeight: 400)
+        
         
     }
 }
 
 struct FoodItemView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodItemView(item: foodData[0])
+        FoodItemView(item: FoodItem(name: "Carrots", category: "Vegetable", expiration: "1/1/2021", ingredients: ""))
     }
 }
