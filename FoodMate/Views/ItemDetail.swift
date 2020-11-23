@@ -18,7 +18,6 @@ struct ItemDetail: View {
         Text(item.name)
                     .font(.largeTitle)
                     .foregroundColor(.red)
-        Text(item.imageURL)
     }
 }
 
