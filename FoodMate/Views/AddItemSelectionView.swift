@@ -15,6 +15,7 @@ struct AddItemSelectionView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State private var showingScanner = false
+    @State private var showAlert = false
     
     @State var foodName = ""
     @State var category = ""
@@ -82,10 +83,16 @@ struct AddItemSelectionView: View {
         .sheet(isPresented: $showingScanner) {
             CodeScannerView(codeTypes: [.ean13,.ean8,.upce], simulatedData: "FakeScan", completion: self.handleScan)
         }
+        .background(EmptyView().sheet(isPresented: $showAlert) {
+            AlertView()
+            
+        } )
+        
+        
     }
     
     func addItemToStorage() {
-        let item = FoodItem(name: foodName, category: category, expiration: expiration, ingredients: "", imageURL: "")
+        let item = FoodItem(name: foodName, category: category, expiration: expiration, ingredients: "")
         
         //Add new food item to the list
         userData.addedFood.append(item)
@@ -137,31 +144,34 @@ struct AddItemSelectionView: View {
                                                 name: item["product_name"].stringValue,
                                                 category: item["category"].stringValue,
                                                 expiration: "",
-                                                ingredients: item["ingredients"].stringValue,
-                                                imageURL: item["images"][0].stringValue)
-                            if (containsAllergens(foodItem: food)) {
-                                //This food item has something that the user is allergic to
-                            } else {
-                                userData.addedFood.append(food)
+                                                ingredients: item["ingredients"].stringValue)
+                            
+                            //if url provided by JSON, overwrite default imageURL
+                            let url = item["images"][0].stringValue
+                            if (!url.isEmpty) {
+                                food.imageURL = url
                             }
+                            
+                            if (containsAllergens(foodItem: &food)) {
+                                //This food item has something that the user is allergic to
+                                food.color = Color.red
+                            }
+                            userData.addedFood.append(food)
                         }
                     }
                 }
- 
-                
-                
-                
          
             case .failure(let error):
                 print(error)
         }
+        
         
         //returns to Storage View
         self.presentationMode.wrappedValue.dismiss()
     }
     
     //returns true if allergen is found
-    func containsAllergens(foodItem: FoodItem) -> Bool {
+    func containsAllergens(foodItem: inout FoodItem) -> Bool {
         var ingredients = foodItem.ingredients
         var contains = false
         
@@ -169,6 +179,7 @@ struct AddItemSelectionView: View {
             
             if let range = ingredients.range(of: allergen, options: .caseInsensitive) {
                 contains = true
+                foodItem.allergens.append(allergen)
             }
         }
         return contains

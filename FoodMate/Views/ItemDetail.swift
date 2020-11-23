@@ -55,6 +55,6 @@ struct ItemDetail: View {
 
 struct ItemDetail_Previews: PreviewProvider {
     static var previews: some View {
-        ItemDetail(item: FoodItem(name: "Carrots", category: "Vegetable", expiration: "1/1/2021", ingredients: "No Ingredients", imageURL: "https://news.nutritioneducationstore.com/wp-content/uploads/2012/10/thanksgiving_1.jpg"))
+        ItemDetail(item: FoodItem(name: "Carrots", category: "Vegetable", expiration: "1/1/2021", ingredients: "No Ingredients"))
     }
 }
