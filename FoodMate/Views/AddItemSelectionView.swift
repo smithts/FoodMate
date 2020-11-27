@@ -95,7 +95,7 @@ struct AddItemSelectionView: View {
         let item = FoodItem(name: foodName, category: category, expiration: expiration, ingredients: "")
         
         //Add new food item to the list
-        userData.addedFood.append(item)
+        self.userData.addedFood.append(item)
         
         //returns to Storage View
         self.presentationMode.wrappedValue.dismiss()
@@ -123,7 +123,7 @@ struct AddItemSelectionView: View {
                             let product = json["products"].arrayValue
                             let item = product[0]
                             
-                            userData.addedFood.append(FoodItem(name: item["product_name"].stringValue, category: "Test", expiration: "Test", ingredients: item["ingredients"].stringValue))
+                            self.userData.addedFood.append(FoodItem(name: item["product_name"].stringValue, category: "Test", expiration: "Test", ingredients: item["ingredients"].stringValue))
                             
                             
                         }
@@ -156,7 +156,7 @@ struct AddItemSelectionView: View {
                                 //This food item has something that the user is allergic to
                                 food.color = Color.red
                             }
-                            userData.addedFood.append(food)
+                            self.userData.addedFood.append(food)
                         }
                     }
                 }
@@ -175,7 +175,9 @@ struct AddItemSelectionView: View {
         var ingredients = foodItem.ingredients
         var contains = false
         
-        userData.allergies.forEach { allergen in
+        self.userData.allergies.forEach { allergen in
+            //
+            print("Allergy: " + allergen)
             
             if let range = ingredients.range(of: allergen, options: .caseInsensitive) {
                 contains = true

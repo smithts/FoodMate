@@ -12,6 +12,8 @@ struct Storage: View {
     @State var showingProfile = false
     @State var showingAddItem = false
     
+    @State var header = "Food Storage"
+    
     @EnvironmentObject var userData: UserData
     
     var profileButton: some View {
@@ -35,17 +37,17 @@ struct Storage: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(userData.addedFood, id: \.name) { item in
+                ForEach(self.userData.addedFood, id: \.name) { item in
                     NavigationLink(
-                        destination: ItemDetail(item: item)
+                        destination: ItemDetailHost().environmentObject(item)
                     ) {
-                        FoodItemView(item: item)
+                        FoodItemView().environmentObject(item)
                     }
                     
                 }.onDelete(perform: onDelete)
             }
             .listStyle(PlainListStyle())
-            .navigationBarTitle("Food Storage")
+            .navigationBarTitle(header)
             .navigationBarItems(
                 leading: addItemButton,
                 trailing: profileButton
@@ -62,7 +64,7 @@ struct Storage: View {
     }
     
     private func onDelete(offsets: IndexSet) {
-        userData.addedFood.remove(atOffsets: offsets)
+        self.userData.addedFood.remove(atOffsets: offsets)
     }
 }
 

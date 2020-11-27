@@ -7,21 +7,22 @@
 import SwiftUI
 
 struct ItemDetail: View {
-    
+    @Environment(\.editMode) var mode
     //let jsonURL = "https://images.barcodelookup.com/3181/31817127-1.jpg"
 
     var item: FoodItem
     
     var body: some View {
-        
-        //Text(item.name)
-            //.font(.largeTitle)
-            //.foregroundColor(.red)
-        //RemoteImage(url: jsonURL)
-            //.aspectRatio(contentMode: .fit)
-            //.frame(width: 200)
-        
         VStack(spacing: 10) {
+            if (item.color == Color.red) {
+                VStack {
+                    Text("Allergen Warning").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    if (!item.allergens.isEmpty) {
+                        Text("This food contains: " + item.allergens[0]).font(.subheadline)
+                    }
+                }.foregroundColor(.red)
+            }
+            
             Text(item.name)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
@@ -33,22 +34,23 @@ struct ItemDetail: View {
                 .frame(width: 200)
                 .padding()
             
-            //Spacer()
-            HStack(alignment: .lastTextBaseline){
-                Text("Category")
-                Text(verbatim: item.category)
+            List {
+                Section(header: Text("Category")) {
+                    Text(item.category)
+                }
+                Section(header: Text("Best by Date")) {
+                    Text(item.expiration)
+                }
+                Section(header: Text("Ingredients")) {
+                    Text(item.ingredients)
+                }
             }
-            HStack(alignment: .lastTextBaseline){
-                Text("Expiration")
-                Text(verbatim: item.expiration)
-            }
-            HStack(alignment: .lastTextBaseline){
-                Text("Ingredients")
-                Text(item.ingredients)
-            }
+            
+            Spacer()
         }
-        .foregroundColor(Color.black.opacity(0.7))
+        .foregroundColor(Color.white.opacity(0.7))
         .padding()
+        
         
     }
 }

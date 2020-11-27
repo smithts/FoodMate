@@ -22,8 +22,6 @@ struct ProfileEditor: View {
             DatePicker("Date of Birth", selection: $profile.birthday, displayedComponents: .date)
             
             
-            
-            
         }
     }
 }

@@ -17,6 +17,9 @@
 		5A3C14742548E51300BAB72A /* FoodMateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C14732548E51300BAB72A /* FoodMateUITests.swift */; };
 		5A3C148D2548F31A00BAB72A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C148C2548F31A00BAB72A /* HomeView.swift */; };
 		5A3C14922548FBFE00BAB72A /* FoodItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C14912548FBFE00BAB72A /* FoodItemView.swift */; };
+		5A53602D25701890009AEFB9 /* AddAllergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A53602C25701890009AEFB9 /* AddAllergyView.swift */; };
+		5A53603D257081D7009AEFB9 /* ItemDetailHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A53603C257081D7009AEFB9 /* ItemDetailHost.swift */; };
+		5A53605025708482009AEFB9 /* ItemDetailEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A53604F25708482009AEFB9 /* ItemDetailEditor.swift */; };
 		5A5692542569D8030083BAB1 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5692532569D8030083BAB1 /* Profile.swift */; };
 		5A5692592569F4680083BAB1 /* AllergyEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5692582569F4670083BAB1 /* AllergyEditView.swift */; };
 		5A56926E256AF77B0083BAB1 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56926D256AF77B0083BAB1 /* SwiftyJSON */; };
@@ -67,6 +70,9 @@
 		5A3C14752548E51300BAB72A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A3C148C2548F31A00BAB72A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5A3C14912548FBFE00BAB72A /* FoodItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemView.swift; sourceTree = "<group>"; };
+		5A53602C25701890009AEFB9 /* AddAllergyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAllergyView.swift; sourceTree = "<group>"; };
+		5A53603C257081D7009AEFB9 /* ItemDetailHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailHost.swift; sourceTree = "<group>"; };
+		5A53604F25708482009AEFB9 /* ItemDetailEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailEditor.swift; sourceTree = "<group>"; };
 		5A5692532569D8030083BAB1 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		5A5692582569F4670083BAB1 /* AllergyEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyEditView.swift; sourceTree = "<group>"; };
 		5A569294256B19A20083BAB1 /* getRemoteImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getRemoteImage.swift; sourceTree = "<group>"; };
@@ -176,13 +182,16 @@
 			isa = PBXGroup;
 			children = (
 				5A3C148C2548F31A00BAB72A /* HomeView.swift */,
-				5A3C14912548FBFE00BAB72A /* FoodItemView.swift */,
+				5A53603C257081D7009AEFB9 /* ItemDetailHost.swift */,
 				5A73209D2554EE40003D7B4F /* ItemDetail.swift */,
+				5A53604F25708482009AEFB9 /* ItemDetailEditor.swift */,
+				5A3C14912548FBFE00BAB72A /* FoodItemView.swift */,
 				5A88631225605DAE0020AF57 /* AddItemSelectionView.swift */,
 				5A280D7E2569D24300F522AF /* ProfileHost.swift */,
 				5A88630D25605C410020AF57 /* ProfileSummary.swift */,
 				5A280D7925688C5800F522AF /* ProfileEditor.swift */,
 				5A5692582569F4670083BAB1 /* AllergyEditView.swift */,
+				5A53602C25701890009AEFB9 /* AddAllergyView.swift */,
 				5A5692A8256B2FBA0083BAB1 /* AlertView.swift */,
 			);
 			path = Views;
@@ -365,13 +374,16 @@
 				5A280D7A25688C5800F522AF /* ProfileEditor.swift in Sources */,
 				5A5692542569D8030083BAB1 /* Profile.swift in Sources */,
 				5A3C14592548E51200BAB72A /* ContentView.swift in Sources */,
+				5A53602D25701890009AEFB9 /* AddAllergyView.swift in Sources */,
 				5A73209E2554EE40003D7B4F /* ItemDetail.swift in Sources */,
+				5A53603D257081D7009AEFB9 /* ItemDetailHost.swift in Sources */,
 				5A280D7F2569D24300F522AF /* ProfileHost.swift in Sources */,
 				5A3C148D2548F31A00BAB72A /* HomeView.swift in Sources */,
 				5A3C14572548E51200BAB72A /* FoodMateApp.swift in Sources */,
 				5A88631325605DAE0020AF57 /* AddItemSelectionView.swift in Sources */,
 				5A886335256086880020AF57 /* SceneDelegate.swift in Sources */,
 				5A5692592569F4680083BAB1 /* AllergyEditView.swift in Sources */,
+				5A53605025708482009AEFB9 /* ItemDetailEditor.swift in Sources */,
 				5A3C14922548FBFE00BAB72A /* FoodItemView.swift in Sources */,
 				5A886330256083140020AF57 /* UserData.swift in Sources */,
 				5A569295256B19A20083BAB1 /* getRemoteImage.swift in Sources */,
