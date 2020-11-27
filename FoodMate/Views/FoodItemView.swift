@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FoodItemView: View {
-    var item: FoodItem
+    @EnvironmentObject var item: FoodItem
     
     @State var expiration = Date()
     
@@ -37,6 +37,6 @@ struct FoodItemView: View {
 
 struct FoodItemView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodItemView(item: FoodItem(name: "Carrots", category: "Vegetable", expiration: "1/1/2021", ingredients: ""))
+        FoodItemView().environmentObject(FoodItem(name: "Carrots", category: "Vegetable", expiration: "1/1/2021", ingredients: ""))
     }
 }
