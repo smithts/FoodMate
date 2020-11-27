@@ -35,13 +35,11 @@ struct ProfileSummary: View {
         NavigationView {
             List {
                 Section(header: Text("Date of Birth")) {
-                    //Text(profile.birthday)
                     Text(formatter.string(from: profile.birthday))
                 }
                 
                 Section(header: Text("Allergens")) {
-                    
-                    ForEach(userData.allergies, id:\.self) { allergen in
+                    ForEach(self.userData.allergies, id:\.self) { allergen in
                         Text(allergen)
                     }
                     
@@ -50,14 +48,12 @@ struct ProfileSummary: View {
                         editAllergiesButton
                         Spacer()
                     }
-                    
-                    
                 }
-                
-            }.navigationTitle(profile.name + "'s Profile")
+            }
+            .navigationTitle(profile.name + "'s Profile")
             .padding(.top, 20)
             .sheet(isPresented: $editAllergies) {
-                AllergyEditView()
+                AllergyEditView().environmentObject(self.userData)
             }
             
         }

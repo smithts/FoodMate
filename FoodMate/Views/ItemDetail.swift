@@ -22,6 +22,14 @@ struct ItemDetail: View {
             //.frame(width: 200)
         
         VStack(spacing: 10) {
+            if (item.color == Color.red) {
+                VStack {
+                    Text("Allergen Warning").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    if (!item.allergens.isEmpty) {
+                        Text("This food contains: " + item.allergens[0]).font(.subheadline)
+                    }
+                }.foregroundColor(.red)
+            }
             Text(item.name)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
@@ -47,7 +55,7 @@ struct ItemDetail: View {
                 Text(item.ingredients)
             }
         }
-        .foregroundColor(Color.black.opacity(0.7))
+        .foregroundColor(Color.white.opacity(0.7))
         .padding()
         
     }

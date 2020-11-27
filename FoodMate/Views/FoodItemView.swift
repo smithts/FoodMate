@@ -16,24 +16,19 @@ struct FoodItemView: View {
         VStack(alignment: .leading){
             
             HStack {
-                //Text(item.expiration).font(.subheadline).foregroundColor(.white)
                 Spacer()
                 Text(item.name).font(.title).foregroundColor(.white)
                 Spacer()
-                //Text(item.category)
-                    //.foregroundColor(.white)
             }
             if (item.color == Color.red) {
-                
                 HStack {
                     Spacer()
                     Text("ALLERGEN WARNING").font(.subheadline)
                     Spacer()
                 }
-                
             }
-            
-        }.background(item.color.opacity(0.7))
+        }
+        .background(item.color.opacity(0.7))
         .frame(maxHeight: 400)
         
         

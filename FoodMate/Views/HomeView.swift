@@ -35,7 +35,7 @@ struct Storage: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(userData.addedFood, id: \.name) { item in
+                ForEach(self.userData.addedFood, id: \.name) { item in
                     NavigationLink(
                         destination: ItemDetail(item: item)
                     ) {
@@ -62,7 +62,7 @@ struct Storage: View {
     }
     
     private func onDelete(offsets: IndexSet) {
-        userData.addedFood.remove(atOffsets: offsets)
+        self.userData.addedFood.remove(atOffsets: offsets)
     }
 }
 
