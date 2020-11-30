@@ -2,20 +2,18 @@
 //  FoodItem.swift
 //  FoodMate
 //
-//  Created by Tanner Smith on 11/5/20.
-//
 
 import SwiftUI
 
-final class FoodItem: ObservableObject {//, /*Codable*/ {
+final class FoodItem: ObservableObject {
     @Published var name: String
     @Published var category: String
     @Published var expiration: Date
     @Published var ingredients: String
+    @Published var allergens: [String]
     
-    //Default Color Value
+    //Default Values
     @Published var color = Color.blue
-    @Published var allergens = [String]()
     @Published var imageURL = "https://news.nutritioneducationstore.com/wp-content/uploads/2012/10/thanksgiving_1.jpg"
     
     init(name: String, category: String, expiration: Date, ingredients: String) {
@@ -23,6 +21,6 @@ final class FoodItem: ObservableObject {//, /*Codable*/ {
         self.category = category
         self.expiration = expiration
         self.ingredients = ingredients
+        self.allergens = [String]()
     }
 }
-

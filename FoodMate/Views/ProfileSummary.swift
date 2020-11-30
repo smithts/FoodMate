@@ -2,15 +2,15 @@
 //  ProfileView.swift
 //  FoodMate
 //
-//  Created by Tanner Smith on 11/14/20.
-//
 
 import SwiftUI
 
 struct ProfileSummary: View {
     @EnvironmentObject var userData: UserData
-    var profile: Profile
+    
     @State var editAllergies = false
+    
+    var profile: Profile
 
     let formatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -28,8 +28,6 @@ struct ProfileSummary: View {
                 .foregroundColor(.blue)
         }
     }
-    
-    
     
     var body: some View {
         NavigationView {
@@ -55,7 +53,6 @@ struct ProfileSummary: View {
             .sheet(isPresented: $editAllergies) {
                 AllergyEditView().environmentObject(self.userData)
             }
-            
         }
     }
 }

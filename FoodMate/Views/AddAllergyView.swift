@@ -2,13 +2,12 @@
 //  AddAllergyView.swift
 //  FoodMate
 //
-//  Created by Tanner Smith on 11/26/20.
-//
 
 import SwiftUI
 
 struct AddAllergyView: View {
     @Environment(\.presentationMode) var presentationMode
+    
     @EnvironmentObject var userData: UserData
     
     @State var allergyName = ""

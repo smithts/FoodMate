@@ -2,14 +2,12 @@
 //  ItemDetail.swift
 //  FoodMate
 //
-//  Created by Tanner Smith on 11/5/20.
-//
+
 import SwiftUI
 
-struct ItemDetail: View {
+struct ItemDetailSummary: View {
     @Environment(\.editMode) var mode
-    //let jsonURL = "https://images.barcodelookup.com/3181/31817127-1.jpg"
-
+    
     var item: FoodItem
     
     let formatter: DateFormatter = {
@@ -57,13 +55,11 @@ struct ItemDetail: View {
         }
         .foregroundColor(Color.white.opacity(0.7))
         .padding()
-        
-        
     }
 }
 
 struct ItemDetail_Previews: PreviewProvider {
     static var previews: some View {
-        ItemDetail(item: FoodItem(name: "Carrots", category: "Vegetable", expiration: Date(), ingredients: "No Ingredients"))
+        ItemDetailSummary(item: FoodItem(name: "Carrots", category: "Vegetable", expiration: Date(), ingredients: "No Ingredients"))
     }
 }

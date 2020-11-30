@@ -2,8 +2,6 @@
 //  FoodItemView.swift
 //  FoodMate
 //
-//  Created by Tanner Smith on 10/27/20.
-//
 
 import SwiftUI
 
@@ -30,8 +28,6 @@ struct FoodItemView: View {
         }
         .background(item.color.opacity(0.7))
         .frame(maxHeight: 400)
-        
-        
     }
 }
 

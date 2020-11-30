@@ -2,8 +2,6 @@
 //  getRemoteImage2.swift
 //  FoodMate
 //
-//  Created by Neil Richard King Rice on 11/22/20.
-//
 
 import SwiftUI
 

@@ -2,8 +2,6 @@
 //  AddItemSelectionView.swift
 //  FoodMate
 //
-//  Created by Tanner Smith on 11/14/20.
-//
 
 import SwiftUI
 import CodeScanner
@@ -37,7 +35,6 @@ struct AddItemSelectionView: View {
                     TextField("Name", text: $foodName)
                     TextField("Category", text: $category)
                     DatePicker("Best By Date", selection: $expiration, displayedComponents: .date)
-                    
                 }
                 
                 Button(action: {
@@ -48,14 +45,10 @@ struct AddItemSelectionView: View {
             }
             .navigationBarTitle("Add Food Item")
             .navigationBarItems(trailing: scanButton)
-            
-            
         }
         .sheet(isPresented: $showingScanner) {
-            CodeScannerView(codeTypes: [.ean13,.ean8,.upce], simulatedData: "FakeScan", completion: self.handleScan)
+            CodeScannerView(codeTypes: [.ean13,.ean8,.upce], simulatedData: "SimulatedScan", completion: self.handleScan)
         }
-        
-        
     }
     
     func addItemToStorage() {

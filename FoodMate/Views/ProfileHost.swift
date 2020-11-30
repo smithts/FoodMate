@@ -2,8 +2,6 @@
 //  ProfileHost.swift
 //  FoodMate
 //
-//  Created by Tanner Smith on 11/21/20.
-//
 
 import SwiftUI
 
