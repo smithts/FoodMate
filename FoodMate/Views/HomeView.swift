@@ -2,8 +2,6 @@
 //  Home.swift
 //  FoodMate
 //
-//  Created by Tanner Smith on 10/27/20.
-//
 
 import SwiftUI
 
@@ -56,10 +54,8 @@ struct Storage: View {
                 AddItemSelectionView().environmentObject(self.userData)
             }
             .background(EmptyView().sheet(isPresented: $showingProfile) {
-                ProfileHost()
+                ProfileHost().environmentObject(self.userData)
             } )
-            
-            
         }
     }
     

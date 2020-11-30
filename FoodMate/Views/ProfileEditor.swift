@@ -2,8 +2,6 @@
 //  ProfileEditor.swift
 //  FoodMate
 //
-//  Created by Tanner Smith on 11/20/20.
-//
 
 import SwiftUI
 
@@ -20,7 +18,6 @@ struct ProfileEditor: View {
             }
             
             DatePicker("Date of Birth", selection: $profile.birthday, displayedComponents: .date)
-            
             
         }
     }

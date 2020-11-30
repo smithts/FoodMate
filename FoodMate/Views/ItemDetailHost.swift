@@ -2,8 +2,6 @@
 //  ItemDetailHost.swift
 //  FoodMate
 //
-//  Created by Tanner Smith on 11/26/20.
-//
 
 import SwiftUI
 
@@ -11,7 +9,6 @@ struct ItemDetailHost: View {
     @Environment(\.editMode) var mode
     
     @EnvironmentObject var item: FoodItem
-    
     
     var body: some View {
         VStack{
@@ -26,12 +23,11 @@ struct ItemDetailHost: View {
                 EditButton()
             }
             if self.mode?.wrappedValue == .inactive {
-                ItemDetail(item: self.item)
+                ItemDetailSummary(item: self.item)
             } else {
                 ItemDetailEditor().environmentObject(self.item)
             }
         }
-        
         .padding()
     }
 }

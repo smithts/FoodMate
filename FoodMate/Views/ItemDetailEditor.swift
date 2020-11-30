@@ -2,8 +2,6 @@
 //  ItemDetailEditor.swift
 //  FoodMate
 //
-//  Created by Tanner Smith on 11/26/20.
-//
 
 import SwiftUI
 

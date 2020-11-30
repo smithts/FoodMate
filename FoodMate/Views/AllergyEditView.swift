@@ -2,8 +2,6 @@
 //  AllergyEditView.swift
 //  FoodMate
 //
-//  Created by Tanner Smith on 11/21/20.
-//
 
 import SwiftUI
 
@@ -28,7 +26,8 @@ struct AllergyEditView: View {
                 ForEach(self.userData.allergies, id: \.self) { allergen in
                     Text(allergen)
                     
-                }.onDelete(perform: onDelete)
+                }
+                .onDelete(perform: onDelete)
             }
             .listStyle(PlainListStyle())
             .navigationBarTitle("User Allergies")
