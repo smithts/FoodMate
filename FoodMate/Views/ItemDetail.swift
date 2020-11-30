@@ -12,6 +12,13 @@ struct ItemDetail: View {
 
     var item: FoodItem
     
+    let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        return formatter
+    }()
+    
     var body: some View {
         VStack(spacing: 10) {
             if (item.color == Color.red) {
@@ -39,7 +46,7 @@ struct ItemDetail: View {
                     Text(item.category)
                 }
                 Section(header: Text("Best by Date")) {
-                    Text(item.expiration)
+                    Text(formatter.string(from: item.expiration))
                 }
                 Section(header: Text("Ingredients")) {
                     Text(item.ingredients)
@@ -57,6 +64,6 @@ struct ItemDetail: View {
 
 struct ItemDetail_Previews: PreviewProvider {
     static var previews: some View {
-        ItemDetail(item: FoodItem(name: "Carrots", category: "Vegetable", expiration: "1/1/2021", ingredients: "No Ingredients"))
+        ItemDetail(item: FoodItem(name: "Carrots", category: "Vegetable", expiration: Date(), ingredients: "No Ingredients"))
     }
 }

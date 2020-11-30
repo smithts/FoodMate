@@ -37,6 +37,6 @@ struct FoodItemView: View {
 
 struct FoodItemView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodItemView().environmentObject(FoodItem(name: "Carrots", category: "Vegetable", expiration: "1/1/2021", ingredients: ""))
+        FoodItemView().environmentObject(FoodItem(name: "Carrots", category: "Vegetable", expiration: Date(), ingredients: ""))
     }
 }
