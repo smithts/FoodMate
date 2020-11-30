@@ -17,11 +17,10 @@ struct AddItemSelectionView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State private var showingScanner = false
-    @State private var showAlert = false
     
     @State var foodName = ""
     @State var category = ""
-    @State var expiration = ""
+    @State var expiration = Date()
     
     let apiKey = "s6ci51zyxl0bzcpdvit8bp376b1i41"
     
@@ -37,7 +36,7 @@ struct AddItemSelectionView: View {
                 Section {
                     TextField("Name", text: $foodName)
                     TextField("Category", text: $category)
-                    TextField("Expiration", text: $expiration)
+                    DatePicker("Best By Date", selection: $expiration, displayedComponents: .date)
                     
                 }
                 
@@ -55,10 +54,6 @@ struct AddItemSelectionView: View {
         .sheet(isPresented: $showingScanner) {
             CodeScannerView(codeTypes: [.ean13,.ean8,.upce], simulatedData: "FakeScan", completion: self.handleScan)
         }
-        .background(EmptyView().sheet(isPresented: $showAlert) {
-            AlertView()
-            
-        } )
         
         
     }
@@ -76,6 +71,12 @@ struct AddItemSelectionView: View {
     func handleScan(result: Result<String, CodeScannerView.ScanError>) {
         //Exits scan view
         self.showingScanner = false
+        
+        // Set default expiration to today + 2 weeks
+        let currentDate = Date()
+        var dateComponent = DateComponents()
+        dateComponent.day = 7 * 2
+        let bestByDate = Calendar.current.date(byAdding: dateComponent, to: currentDate)
         
         switch result {
             case .success(let code):
@@ -98,7 +99,7 @@ struct AddItemSelectionView: View {
                                 var food = FoodItem(
                                                     name: item["product_name"].stringValue,
                                                     category: item["category"].stringValue,
-                                                    expiration: "",
+                                                    expiration: bestByDate ??  currentDate,
                                                     ingredients: item["ingredients"].stringValue)
                                 
                                 //if url provided by JSON, overwrite default imageURL
@@ -130,7 +131,7 @@ struct AddItemSelectionView: View {
                                 var food = FoodItem(
                                                     name: item["product_name"].stringValue,
                                                     category: item["category"].stringValue,
-                                                    expiration: "",
+                                                    expiration: bestByDate ?? currentDate,
                                                     ingredients: item["ingredients"].stringValue)
                                 
                                 //if url provided by JSON, overwrite default imageURL
