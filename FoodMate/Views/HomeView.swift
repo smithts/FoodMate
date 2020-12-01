@@ -1,5 +1,5 @@
 //
-//  Home.swift
+//  HomeView.swift
 //  FoodMate
 //
 

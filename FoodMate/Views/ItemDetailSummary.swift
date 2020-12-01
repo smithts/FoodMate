@@ -1,5 +1,5 @@
 //
-//  ItemDetail.swift
+//  ItemDetailSummary.swift
 //  FoodMate
 //
 
