@@ -1,5 +1,5 @@
 //
-//  getRemoteImage2.swift
+//  RemoteImageView.swift
 //  FoodMate
 //
 

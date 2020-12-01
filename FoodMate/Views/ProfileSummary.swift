@@ -1,5 +1,5 @@
 //
-//  ProfileView.swift
+//  ProfileSummary.swift
 //  FoodMate
 //
 
